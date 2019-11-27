@@ -1,0 +1,23 @@
+{
+  "name": "complete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murshidpc/node_complete.git"
+  },
+  "author": "murshid_pc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murshidpc/node_complete/issues"
+  },
+  "homepage": "https://github.com/murshidpc/node_complete#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
