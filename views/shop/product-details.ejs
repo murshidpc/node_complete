@@ -1,0 +1,16 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<%- include('../includes/navigation.ejs') %>
+<main class="center">
+        <h1><%= title %></h1>
+        <hr>
+        <img src="<%= imageUrl%>" alt="<%= title %>">
+        <h2><%= price %></h2>
+        <hr>
+        <h2><%= description%></h2>
+        <form action="/cart" method="POST">
+            <button class="btn" type="submit">Add To Cart</button>
+        </form>
+</main>
+    
+<%- include('../includes/end.ejs') %>
