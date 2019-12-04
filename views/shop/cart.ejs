@@ -1,5 +1,37 @@
 <%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
 </head>
 <%- include('../includes/navigation.ejs') %>
-    <h1>Cart Is Empty!</h1>
+    <main>
+        <% if (cartItem.length > 0) { %>
+            <div class="grid">
+                <% for (let product of cartItem) { %>
+                    <article class="card product-item">
+                        <header class="card__header">
+                            <h1 class="product__title"><%= product.products.title %></h1>
+                        </header>
+                        <div class="card__image">
+                            <img src="<%= product.products.imageUrl %>">
+                        </div>
+                        <div class="card__content">
+                            <h2 class="product__price"><%= product.products.price %></h2>
+                            <p class="product__description"><%= product.products.description %></p>
+                            <p class="product__price"><%= product.qty %></p>
+                        </div>
+                        <div class="card__actions">
+                            <a href="/product/<%= product.products.id %>" class="btn">Details</a>
+                            <form action="/delete-cart-product" method="POST">
+                                <input type="hidden" name="prodId" value="<%= product.products.id %>">
+                                <button type="submit" class="btn">Remove From Cart</button>
+                            </form>
+                            
+
+                        </div>
+                    </article>
+                <% } %>
+            </div>
+        <% } else { %>
+            <h1>Cart Is Empty!</h1>
+        <% } %>
+    </main>
 <%- include('../includes/end.ejs') %>
