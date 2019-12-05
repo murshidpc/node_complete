@@ -19,9 +19,9 @@
                             <p class="product__price"><%= product.qty %></p>
                         </div>
                         <div class="card__actions">
-                            <a href="/product/<%= product.products.id %>" class="btn">Details</a>
+                            <a href="/product/<%= product.products._id %>" class="btn">Details</a>
                             <form action="/delete-cart-product" method="POST">
-                                <input type="hidden" name="prodId" value="<%= product.products.id %>">
+                                <input type="hidden" name="prodId" value="<%= product.products._id %>">
                                 <button type="submit" class="btn">Remove From Cart</button>
                             </form>
                             
