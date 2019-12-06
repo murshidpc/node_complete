@@ -17,7 +17,7 @@ exports.postAddProduct = (req, res, next) => {
   const product = new Product(title, imageUrl, price, description, null, req.user._id);
   product.save()
   .then( result => {
-    console.log('product created');
+    // console.log('product created');
     res.redirect('/admin/products');
   })
   .catch(err => {
@@ -55,7 +55,7 @@ exports.postEditProduct = (req, res, next) => {
     const updatedImageUrl = req.body.imageUrl;
     const updatedPrice = req.body.price;
     const updatedDesc = req.body.description;
-    const updatedProduct = new Product( updatedTitle, updatedImageUrl, updatedPrice, updatedDesc, new mongodb.ObjectID(productId));
+    const updatedProduct = new Product( updatedTitle, updatedImageUrl, updatedPrice, updatedDesc, new mongodb.ObjectID( productId));
     updatedProduct.save();
     res.redirect('/admin/products');
 
