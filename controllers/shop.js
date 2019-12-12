@@ -2,7 +2,7 @@ const Product = require('../models/product');
 const User = require('../models/user');
 
 exports.getProducts = (req, res, next) => {
-  Product.fetchAll()
+  Product.find()
   .then(products => {
     res.render('shop/product-list', {
       prods: products,
@@ -17,14 +17,6 @@ exports.getProducts = (req, res, next) => {
 
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
-  // Product.findById(prodId, product => {
-  //   res.render('shop/product-details', {
-  //     product:product,
-  //     pageTitle: 'Product Details',
-  //     path:''
-  //   });
-  // });
-  // res.redirect('/');
   Product.findById(prodId)
     .then(product => {
       res.render('shop/product-details', {
@@ -37,7 +29,7 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-  Product.fetchAll()
+  Product.find()
   .then(products => {
     res.render('shop/index', {
       prods: products,
@@ -104,6 +96,7 @@ exports.getOrders = (req, res, next) => {
   req.user
     .getOrders()
     .then(orders => {
+      // console.log(orders.items);
       res.render('shop/orders', {
         path: '/orders',
         pageTitle: 'Your Orders',
