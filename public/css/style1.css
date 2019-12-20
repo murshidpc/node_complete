@@ -1,0 +1,41 @@
+body,
+html {
+  color: #ffffff;
+  font-family: monospace;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+a {
+  color: #ffffff;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+h1 {
+  box-sizing: border-box;
+  margin: 10px 0;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.bottom {
+  bottom: 30px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}

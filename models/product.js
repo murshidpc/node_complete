@@ -1,62 +1,31 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
-    title: {
-        type:String,
-        required: true
-    },
-    price: {
-        type:Number,
-        required: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    imageUrl: {
-        type: String,
-        required: true
-    },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    }
+  title: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  imageUrl: {
+    type: String,
+    required: true
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  }
 });
 
-module.exports = mongoose.model('Product', ProductSchema);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = mongoose.model("Product", ProductSchema);
 
 // const mongodb = require('mongodb');
 // const getDb = require('../util/database').getDb;
@@ -66,11 +35,11 @@ module.exports = mongoose.model('Product', ProductSchema);
 //         this.title = title;
 //         this.imageUrl = imageUrl;
 //         this.price = price;
-//         this.description = description; 
-//         this._id = id ? new mongodb.ObjectId(id) : null;; 
-//         this.userId = userId;  
+//         this.description = description;
+//         this._id = id ? new mongodb.ObjectId(id) : null;;
+//         this.userId = userId;
 //       }
-  
+
 //   save(){
 //       const db = getDb();
 //       let dbOp;
@@ -88,7 +57,7 @@ module.exports = mongoose.model('Product', ProductSchema);
 //         console.log(err);
 //       });
 //   }
-  
+
 //   static fetchAll(){
 //     const db = getDb();
 //     return db.collection('products')
@@ -123,23 +92,7 @@ module.exports = mongoose.model('Product', ProductSchema);
 //   }
 // }
 
-
 // module.exports = Product;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // const fs = require('fs');
 // // const path = require('path');
@@ -167,7 +120,7 @@ module.exports = mongoose.model('Product', ProductSchema);
 // //     this.title = title;
 // //     this.imageUrl = imageUrl;
 // //     this.price = price;
-// //     this.description = description;    
+// //     this.description = description;
 // //   }
 
 // //   save() {
@@ -189,7 +142,7 @@ module.exports = mongoose.model('Product', ProductSchema);
 // //           });
 // //         });
 // //       }
-// //     })    
+// //     })
 // //   }
 
 // //   static fetchAll(cb) {
@@ -215,4 +168,3 @@ module.exports = mongoose.model('Product', ProductSchema);
 // //       })
 // //   }
 // // };
-
